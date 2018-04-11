@@ -20,7 +20,7 @@ public class BoardDAOImpl implements BoardDAO{
 	
 	@Override
 	public void update(BoardVO vo)throws Exception{
-		session.update(namespace+".read",vo);
+		session.update(namespace+".update",vo);
 	}
 	
 	@Override
