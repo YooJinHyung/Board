@@ -1,11 +1,13 @@
 package com.jh.web;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -45,5 +47,15 @@ public class BoardDAOTest {
 	@Test
 	public void testDelete() throws Exception{
 		dao.delete(1);
+	}
+	
+	@Test
+	public void testListPage() throws Exception{
+		int page = 3;
+		
+		List<BoardVO> list = dao.listPage(page);
+		for(BoardVO boardVO : list){
+			logger.info(boardVO.getBno()+":"+ boardVO.getTitle());
+		}
 	}
 }

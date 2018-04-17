@@ -102,7 +102,7 @@ $(document).ready(function(){
 	});
 	
 	$(".btn-primary").on("click", function(){
-		self.location = "/board/listAll";
+		self.location = "/board/listPage";
 	});
 
 });

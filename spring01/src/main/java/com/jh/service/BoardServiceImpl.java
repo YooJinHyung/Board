@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.jh.domain.BoardVO;
+import com.jh.domain.Criteria;
 import com.jh.persistence.BoardDAO;
 @Service
 public class BoardServiceImpl implements BoardService{
@@ -41,5 +42,9 @@ public class BoardServiceImpl implements BoardService{
 		// TODO Auto-generated method stub
 		return dao.listAll();
 	}
-
+	
+	@Override
+	public List<BoardVO> listCriteria(Criteria cri) throws Exception{
+		return dao.listCriteria(cri);
+	}
 }
